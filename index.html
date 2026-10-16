@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de perfiles GitHub</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 2rem auto; }
+        .perfil { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+        .perfil img { width: 96px; border-radius: 50%; }
+        .error { color: crimson; }
+        .oculto { display: none; }
+        button { cursor: pointer; padding: 0.5rem 1rem; margin-top: 10px; }
+        footer { margin-top: 2rem; font-size: 0.9em; color: gray; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Buscador de perfiles GitHub</h1>
+    <form id="form-buscar">
+        <input type="text" id="input-usuario" placeholder="Usuario" required>
+        <!-- Actividad 2: Select para ordenamiento -->
+        <select id="select-orden">
+            <option value="updated">Actualizados recientemente</option>
+            <option value="created">Creados recientemente</option>
+            <option value="full_name">Nombre (Alfabético)</option>
+        </select>
+        <button type="submit" id="btn-buscar">Buscar</button>
+    </form>
+    
+    <p id="estado"></p>
+    
+    <section id="perfil" class="perfil oculto"></section>
+    
+    <!-- Actividad 2: Contenedor de resumen de lenguajes -->
+    <div id="resumen-lenguajes" style="margin-bottom: 1rem; font-weight: bold; color: #333;"></div>
+
+    <h2 id="titulo-repos" class="oculto">Repositorios</h2>
+    <ul id="repos"></ul>
+    
+    <!-- Actividad 3: Botón Cargar más -->
+    <button id="btn-cargar-mas" class="oculto">Cargar más</button>
+
+    <!-- Actividad 3: Footer para peticiones restantes -->
+    <footer id="pie-peticiones"></footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
